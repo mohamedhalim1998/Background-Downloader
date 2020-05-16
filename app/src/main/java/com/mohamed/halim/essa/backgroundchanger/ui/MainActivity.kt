@@ -1,7 +1,8 @@
-package com.mohamed.halim.essa.backgroundchanger
+package com.mohamed.halim.essa.backgroundchanger.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mohamed.halim.essa.backgroundchanger.R
 
 class MainActivity : AppCompatActivity() {
 

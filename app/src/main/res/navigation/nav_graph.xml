@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/photosFragment"
-        android:name="com.mohamed.halim.essa.backgroundchanger.PhotosFragment"
+        android:name="com.mohamed.halim.essa.backgroundchanger.ui.PhotosFragment"
         android:label="fragment_photos"
         tools:layout="@layout/fragment_photos" />
 </navigation>

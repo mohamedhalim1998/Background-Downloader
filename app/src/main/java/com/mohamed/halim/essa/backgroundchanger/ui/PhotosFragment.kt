@@ -1,10 +1,11 @@
-package com.mohamed.halim.essa.backgroundchanger
+package com.mohamed.halim.essa.backgroundchanger.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.mohamed.halim.essa.backgroundchanger.R
 
 
 class PhotosFragment : Fragment() {
