@@ -9,18 +9,19 @@ import retrofit2.Callback
 import retrofit2.Response
 import timber.log.Timber
 
-class PhotoViewModel : ViewModel(){
+class PhotoViewModel : ViewModel() {
     private val _images = MutableLiveData<List<Image>>()
+
     // The external immutable LiveData for the response String
     val images: LiveData<List<Image>>
         get() = _images
 
     init {
-        getPhotos()
+        getPhotos(1)
     }
 
-    private fun getPhotos() {
-        PhotosApi.retrofitService.getPhotos().enqueue(object : Callback<List<Image>>{
+    fun getPhotos(pageNumber: Int) {
+        PhotosApi.retrofitService.getPhotos(pageNumber).enqueue(object : Callback<List<Image>> {
             override fun onFailure(call: Call<List<Image>>, t: Throwable) {
                 Timber.d(t)
             }
@@ -28,7 +29,6 @@ class PhotoViewModel : ViewModel(){
             override fun onResponse(call: Call<List<Image>>, response: Response<List<Image>>) {
                 _images.value = response.body()
             }
-
         })
     }
 }

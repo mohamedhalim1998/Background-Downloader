@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mohamed.halim.essa.backgroundchanger.R
 import com.mohamed.halim.essa.backgroundchanger.data.Image
 import com.mohamed.halim.essa.backgroundchanger.databinding.ImagesListItemBinding
+import timber.log.Timber
 
 class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>(){
-    private var images : List<Image>? = null
+    private var images : MutableList<Image> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
        val item : ImagesListItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),R.layout.images_list_item, parent, false)
@@ -26,7 +27,7 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>(){
         holder.bind(images!![position])
     }
     fun swapList(newImages : List<Image>){
-        images = newImages
+        images.addAll(newImages)
         notifyDataSetChanged()
     }
     class ImageViewHolder(val item: ImagesListItemBinding): RecyclerView.ViewHolder(item.root) {

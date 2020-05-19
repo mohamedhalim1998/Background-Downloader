@@ -8,6 +8,8 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.unsplash.com/"
 
@@ -19,10 +21,12 @@ private val retrofit: Retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .build()
+
 interface ApiService {
-    @GET("photos?page=1&client_id=hkljOHo8h7IfEc3eEhMAmmKEm-5kO10shYetG1urFsY&client_secret=ccMJq-sDW5cbKcICR4tgBk2uzFaiyrBFuaqJXaM0n-A")
-    fun getPhotos() : Call<List<Image>>
+    @GET("photos?client_id=hkljOHo8h7IfEc3eEhMAmmKEm-5kO10shYetG1urFsY&client_secret=ccMJq-sDW5cbKcICR4tgBk2uzFaiyrBFuaqJXaM0n-A")
+    fun getPhotos(@Query("page") pageNum: Int): Call<List<Image>>
 }
+
 object PhotosApi {
     val retrofitService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
