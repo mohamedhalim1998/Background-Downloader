@@ -11,8 +11,6 @@ import timber.log.Timber
 
 class PhotoViewModel : ViewModel() {
     private val _images = MutableLiveData<List<Image>>()
-
-    // The external immutable LiveData for the response String
     val images: LiveData<List<Image>>
         get() = _images
 

@@ -4,10 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/photosFragment">
-
     <fragment
         android:id="@+id/photosFragment"
         android:name="com.mohamed.halim.essa.backgroundchanger.ui.PhotosFragment"
         android:label="fragment_photos"
-        tools:layout="@layout/fragment_photos" />
+        tools:layout="@layout/fragment_photos">
+        <action
+            android:id="@+id/action_photosFragment_to_imageViewFragment"
+            app:destination="@id/imageViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageViewFragment"
+        android:name="com.mohamed.halim.essa.backgroundchanger.ui.ImageViewFragment"
+        android:label="ImageViewFragment">
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

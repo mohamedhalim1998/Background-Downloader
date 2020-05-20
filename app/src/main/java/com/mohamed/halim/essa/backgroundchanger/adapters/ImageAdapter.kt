@@ -10,30 +10,48 @@ import com.mohamed.halim.essa.backgroundchanger.data.Image
 import com.mohamed.halim.essa.backgroundchanger.databinding.ImagesListItemBinding
 import timber.log.Timber
 
-class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>(){
-    private var images : MutableList<Image> = mutableListOf()
+class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+    private var images: MutableList<Image> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-       val item : ImagesListItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),R.layout.images_list_item, parent, false)
+        val item: ImagesListItemBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(parent.context),
+            R.layout.images_list_item,
+            parent,
+            false
+        )
         return ImageViewHolder(item)
 
     }
 
     override fun getItemCount(): Int {
-      return images?.size ?:0
+        return images.size
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.bind(images!![position])
+        holder.bind(images[position])
     }
-    fun swapList(newImages : List<Image>){
+
+    fun swapList(newImages: List<Image>) {
         images.addAll(newImages)
         notifyDataSetChanged()
     }
-    class ImageViewHolder(val item: ImagesListItemBinding): RecyclerView.ViewHolder(item.root) {
+
+    inner class ImageViewHolder(val item: ImagesListItemBinding) : RecyclerView.ViewHolder(item.root) , View.OnClickListener {
+        init {
+            item.root.setOnClickListener(this)
+        }
         fun bind(image: Image) {
             item.image = image
         }
 
+        override fun onClick(v: View?) {
+            imageClickListener.onImageClickListener(images[adapterPosition].urls?.regular!!)
+        }
+
+    }
+
+    interface ImageClickListener {
+        fun onImageClickListener(imageUrl : String)
     }
 }

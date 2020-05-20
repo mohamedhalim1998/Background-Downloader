@@ -1,6 +1,8 @@
 package com.mohamed.halim.essa.backgroundchanger.ui
 
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.mohamed.halim.essa.backgroundchanger.BuildConfig
 import com.mohamed.halim.essa.backgroundchanger.R
@@ -15,5 +17,8 @@ class MainActivity : AppCompatActivity() {
         if (BuildConfig.DEBUG) {
             Timber.plant(DebugTree())
         }
+        supportActionBar?.hide()
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
 }
