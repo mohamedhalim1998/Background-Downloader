@@ -4,12 +4,11 @@ import com.mohamed.halim.essa.backgroundchanger.data.Image
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.unsplash.pickerandroid.photopicker.data.UnsplashPhoto
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 private const val BASE_URL = "https://api.unsplash.com/"
 
@@ -25,6 +24,9 @@ private val retrofit: Retrofit = Retrofit.Builder()
 interface ApiService {
     @GET("photos?client_id=hkljOHo8h7IfEc3eEhMAmmKEm-5kO10shYetG1urFsY&client_secret=ccMJq-sDW5cbKcICR4tgBk2uzFaiyrBFuaqJXaM0n-A")
     fun getPhotos(@Query("page") pageNum: Int): Call<List<Image>>
+    @Streaming
+    @GET
+    fun downloadImage(@Url fileUrl : String) : Call<ResponseBody>
 }
 
 object PhotosApi {

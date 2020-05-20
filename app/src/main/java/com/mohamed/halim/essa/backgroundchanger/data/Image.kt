@@ -1,7 +1,10 @@
 package com.mohamed.halim.essa.backgroundchanger.data
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Image @JvmOverloads constructor(
     val id: String,
     @Json(name = "created_at") val createdAt: String? = null,
@@ -16,19 +19,21 @@ data class Image @JvmOverloads constructor(
     val likes: Int? = null
 
 
-)
+) : Parcelable
 
+@Parcelize
 data class Urls @JvmOverloads constructor(
     val raw: String? = null,
     val full: String? = null,
     val regular: String? = null,
     val small: String? = null,
     val thumb: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class Links @JvmOverloads constructor(
     val self: String? = null,
     val html: String? = null,
     val download: String? = null,
     @Json(name = "download_location") val downloadLocation: String? = null
-)
+) : Parcelable

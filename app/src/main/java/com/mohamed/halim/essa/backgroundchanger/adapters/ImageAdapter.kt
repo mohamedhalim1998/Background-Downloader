@@ -46,12 +46,12 @@ class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.A
         }
 
         override fun onClick(v: View?) {
-            imageClickListener.onImageClickListener(images[adapterPosition].urls?.regular!!)
+            imageClickListener.onImageClickListener(images[adapterPosition])
         }
 
     }
 
     interface ImageClickListener {
-        fun onImageClickListener(imageUrl : String)
+        fun onImageClickListener(image : Image)
     }
 }

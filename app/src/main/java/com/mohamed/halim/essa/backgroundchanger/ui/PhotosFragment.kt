@@ -61,9 +61,9 @@ class PhotosFragment : Fragment(), ImageAdapter.ImageClickListener {
         navController = findNavController()
     }
 
-    override fun onImageClickListener(imageUrl: String) {
+    override fun onImageClickListener(image: Image) {
         val bundle = Bundle()
-        bundle.putString("imageUrl", imageUrl)
+        bundle.putParcelable("image", image)
         navController.navigate(R.id.action_photosFragment_to_imageViewFragment, bundle)
     }
 

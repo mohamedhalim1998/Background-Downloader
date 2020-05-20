@@ -18,8 +18,8 @@
         android:name="com.mohamed.halim.essa.backgroundchanger.ui.ImageViewFragment"
         android:label="ImageViewFragment">
         <argument
-            android:name="imageUrl"
-            app:argType="string"
+            android:name="image"
+            app:argType="com.mohamed.halim.essa.backgroundchanger.data.Image"
             app:nullable="true" />
     </fragment>
 </navigation>

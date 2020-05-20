@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="imageUrl"
-            type="String" />
+            name="image"
+            type="com.mohamed.halim.essa.backgroundchanger.data.Image" />
     </data>
 
     <RelativeLayout
@@ -34,9 +34,10 @@
             app:zoomage_maxScale="8"
             app:zoomage_minScale="0.6"
             app:zoomage_restrictBounds="false"
+            android:focusable="false"
             app:zoomage_translatable="true"
             app:zoomage_zoomable="true"
-            bind:image="@{imageUrl}" />
+            bind:image="@{image.urls.regular}" />
 
     </RelativeLayout>
 </layout>
