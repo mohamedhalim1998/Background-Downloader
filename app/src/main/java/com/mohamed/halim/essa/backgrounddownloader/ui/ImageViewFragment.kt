@@ -1,11 +1,10 @@
 package com.mohamed.halim.essa.backgrounddownloader.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.mohamed.halim.essa.backgrounddownloader.R
 import com.mohamed.halim.essa.backgrounddownloader.data.Image
 import com.mohamed.halim.essa.backgrounddownloader.databinding.FragmentImageViewBinding
 import com.mohamed.halim.essa.backgrounddownloader.network.DownloadTask
@@ -23,7 +22,7 @@ class ImageViewFragment : Fragment() {
 //                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 //                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 //                or View.SYSTEM_UI_FLAG_FULLSCREEN)
-
+        setHasOptionsMenu(true)
 
     }
 
@@ -37,15 +36,28 @@ class ImageViewFragment : Fragment() {
         binding.image = image
         Timber.d(image.urls?.full)
         imageView = binding.fullImageView
-        binding.root.setOnLongClickListener {
-            downloadImage()
-            true
-        }
         return binding.root
     }
 
-    private fun downloadImage() {
-        Timber.d("start")
-        DownloadTask(requireContext(), image.id, image.urls?.full!!).execute()
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.image_fragment_menu, menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        when(id){
+            R.id.action_download -> {
+                DownloadTask(requireContext(), image.id, image.urls?.full!!).execute()
+                return true
+            }
+            R.id.action_share -> {
+
+            }
+
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
