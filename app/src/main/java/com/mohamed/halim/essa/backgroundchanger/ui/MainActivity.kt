@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         if (BuildConfig.DEBUG) {
             Timber.plant(DebugTree())
         }
-        supportActionBar?.hide()
-        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN)
+//        supportActionBar?.hide()
+//        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+//        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN)
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED
         ) {
