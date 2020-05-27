@@ -6,7 +6,7 @@
     app:startDestination="@id/photosFragment">
     <fragment
         android:id="@+id/photosFragment"
-        android:name="com.mohamed.halim.essa.backgroundchanger.ui.PhotosFragment"
+        android:name="com.mohamed.halim.essa.backgrounddownloader.ui.PhotosFragment"
         android:label="fragment_photos"
         tools:layout="@layout/fragment_photos">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/imageViewFragment"
-        android:name="com.mohamed.halim.essa.backgroundchanger.ui.ImageViewFragment"
+        android:name="com.mohamed.halim.essa.backgrounddownloader.ui.ImageViewFragment"
         android:label="ImageViewFragment">
         <argument
             android:name="image"

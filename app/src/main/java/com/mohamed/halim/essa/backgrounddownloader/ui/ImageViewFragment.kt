@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger.ui
+package com.mohamed.halim.essa.backgrounddownloader.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.mohamed.halim.essa.backgroundchanger.data.Image
-import com.mohamed.halim.essa.backgroundchanger.databinding.FragmentImageViewBinding
-import com.mohamed.halim.essa.backgroundchanger.network.DownloadTask
+import com.mohamed.halim.essa.backgrounddownloader.data.Image
+import com.mohamed.halim.essa.backgrounddownloader.databinding.FragmentImageViewBinding
+import com.mohamed.halim.essa.backgrounddownloader.network.DownloadTask
 import timber.log.Timber
 
 

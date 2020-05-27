@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.mohamed.halim.essa.backgroundchanger.data.PhotoViewModel" />
+            type="com.mohamed.halim.essa.backgrounddownloader.data.PhotoViewModel" />
     </data>
 
     <FrameLayout

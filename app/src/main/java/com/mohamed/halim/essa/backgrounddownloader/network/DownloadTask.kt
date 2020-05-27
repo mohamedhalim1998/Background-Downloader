@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger.network
+package com.mohamed.halim.essa.backgrounddownloader.network
 
 import android.content.Context
 import android.graphics.Bitmap

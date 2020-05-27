@@ -1,15 +1,13 @@
-package com.mohamed.halim.essa.backgroundchanger.ui
+package com.mohamed.halim.essa.backgrounddownloader.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.mohamed.halim.essa.backgroundchanger.BuildConfig
-import com.mohamed.halim.essa.backgroundchanger.R
+import com.mohamed.halim.essa.backgrounddownloader.BuildConfig
+import com.mohamed.halim.essa.backgrounddownloader.R
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 

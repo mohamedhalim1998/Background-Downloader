@@ -5,7 +5,7 @@
     <data>
         <variable
             name="image"
-            type="com.mohamed.halim.essa.backgroundchanger.data.Image" />
+            type="com.mohamed.halim.essa.backgrounddownloader.data.Image" />
     </data>
 
     <FrameLayout

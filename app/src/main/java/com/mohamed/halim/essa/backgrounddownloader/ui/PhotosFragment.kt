@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger.ui
+package com.mohamed.halim.essa.backgrounddownloader.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -6,20 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.get
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mohamed.halim.essa.backgroundchanger.R
-import com.mohamed.halim.essa.backgroundchanger.adapters.ImageAdapter
-import com.mohamed.halim.essa.backgroundchanger.data.Image
-import com.mohamed.halim.essa.backgroundchanger.data.PhotoViewModel
-import com.mohamed.halim.essa.backgroundchanger.databinding.FragmentPhotosBinding
-import timber.log.Timber
+import com.mohamed.halim.essa.backgrounddownloader.R
+import com.mohamed.halim.essa.backgrounddownloader.adapters.ImageAdapter
+import com.mohamed.halim.essa.backgrounddownloader.data.Image
+import com.mohamed.halim.essa.backgrounddownloader.data.PhotoViewModel
+import com.mohamed.halim.essa.backgrounddownloader.databinding.FragmentPhotosBinding
 
 
 class PhotosFragment : Fragment(), ImageAdapter.ImageClickListener {

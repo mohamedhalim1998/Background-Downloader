@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger.data
+package com.mohamed.halim.essa.backgrounddownloader.data
 
 import android.os.Parcelable
 import com.squareup.moshi.Json

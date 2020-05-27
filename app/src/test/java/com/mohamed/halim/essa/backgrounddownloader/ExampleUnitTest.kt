@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger
+package com.mohamed.halim.essa.backgrounddownloader
 
 import org.junit.Test
 

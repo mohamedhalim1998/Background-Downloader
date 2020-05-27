@@ -1,9 +1,8 @@
-package com.mohamed.halim.essa.backgroundchanger.network
+package com.mohamed.halim.essa.backgrounddownloader.network
 
-import com.mohamed.halim.essa.backgroundchanger.data.Image
+import com.mohamed.halim.essa.backgrounddownloader.data.Image
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.unsplash.pickerandroid.photopicker.data.UnsplashPhoto
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit

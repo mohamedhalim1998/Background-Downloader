@@ -1,9 +1,9 @@
-package com.mohamed.halim.essa.backgroundchanger.data
+package com.mohamed.halim.essa.backgrounddownloader.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.mohamed.halim.essa.backgroundchanger.network.PhotosApi
+import com.mohamed.halim.essa.backgrounddownloader.network.PhotosApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

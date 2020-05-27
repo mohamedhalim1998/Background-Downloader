@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger
+package com.mohamed.halim.essa.backgrounddownloader
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

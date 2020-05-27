@@ -1,4 +1,4 @@
-package com.mohamed.halim.essa.backgroundchanger.adapters
+package com.mohamed.halim.essa.backgrounddownloader.adapters
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

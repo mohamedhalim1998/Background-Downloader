@@ -1,14 +1,13 @@
-package com.mohamed.halim.essa.backgroundchanger.adapters
+package com.mohamed.halim.essa.backgrounddownloader.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.mohamed.halim.essa.backgroundchanger.R
-import com.mohamed.halim.essa.backgroundchanger.data.Image
-import com.mohamed.halim.essa.backgroundchanger.databinding.ImagesListItemBinding
-import timber.log.Timber
+import com.mohamed.halim.essa.backgrounddownloader.R
+import com.mohamed.halim.essa.backgrounddownloader.data.Image
+import com.mohamed.halim.essa.backgrounddownloader.databinding.ImagesListItemBinding
 
 class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
     private var images: MutableList<Image> = mutableListOf()
