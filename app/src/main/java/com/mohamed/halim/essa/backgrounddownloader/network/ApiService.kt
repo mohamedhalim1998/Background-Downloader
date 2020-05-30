@@ -21,7 +21,7 @@ private val retrofit: Retrofit = Retrofit.Builder()
     .build()
 
 interface ApiService {
-    @GET("photos?client_id=hkljOHo8h7IfEc3eEhMAmmKEm-5kO10shYetG1urFsY&client_secret=ccMJq-sDW5cbKcICR4tgBk2uzFaiyrBFuaqJXaM0n-A")
+    @GET("photos?client_id=USE_YOURS&client_secret=USE_YOURS")
     fun getPhotos(@Query("page") pageNum: Int): Call<List<Image>>
     @Streaming
     @GET
