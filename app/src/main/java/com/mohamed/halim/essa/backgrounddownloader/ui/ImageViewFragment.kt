@@ -8,6 +8,7 @@ import com.mohamed.halim.essa.backgrounddownloader.R
 import com.mohamed.halim.essa.backgrounddownloader.data.Image
 import com.mohamed.halim.essa.backgrounddownloader.databinding.FragmentImageViewBinding
 import com.mohamed.halim.essa.backgrounddownloader.network.DownloadTask
+import com.mohamed.halim.essa.backgrounddownloader.network.ShareTask
 import timber.log.Timber
 
 
@@ -46,18 +47,17 @@ class ImageViewFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        when(id){
+        when (id) {
             R.id.action_download -> {
                 DownloadTask(requireContext(), image.id, image.urls?.full!!).execute()
                 return true
             }
             R.id.action_share -> {
-
+                ShareTask(requireContext(), image.id, image.urls?.regular!!).execute()
             }
 
 
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

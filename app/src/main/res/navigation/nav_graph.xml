@@ -19,7 +19,7 @@
         android:label="ImageViewFragment">
         <argument
             android:name="image"
-            app:argType="com.mohamed.halim.essa.backgroundchanger.data.Image"
+            app:argType="com.mohamed.halim.essa.backgrounddownloader.data.Image"
             app:nullable="true" />
     </fragment>
 </navigation>

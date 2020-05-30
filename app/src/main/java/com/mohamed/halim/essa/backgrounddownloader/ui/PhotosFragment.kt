@@ -27,7 +27,6 @@ class PhotosFragment : Fragment(), ImageAdapter.ImageClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        requireActivity().window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN)
         viewModel = ViewModelProviders.of(this).get(PhotoViewModel::class.java)
         val binding = FragmentPhotosBinding.inflate(layoutInflater)
         binding.lifecycleOwner = this
