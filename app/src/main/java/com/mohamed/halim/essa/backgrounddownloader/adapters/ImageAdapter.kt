@@ -9,8 +9,9 @@ import com.mohamed.halim.essa.backgrounddownloader.R
 import com.mohamed.halim.essa.backgrounddownloader.data.Image
 import com.mohamed.halim.essa.backgrounddownloader.databinding.ImagesListItemBinding
 
-class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-    private var images: MutableList<Image> = mutableListOf()
+class ImageAdapter(var imageClickListener: ImageClickListener) :
+    RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+    private lateinit var images: List<Image>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val item: ImagesListItemBinding = DataBindingUtil.inflate(
@@ -20,7 +21,6 @@ class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.A
             false
         )
         return ImageViewHolder(item)
-
     }
 
     override fun getItemCount(): Int {
@@ -32,14 +32,16 @@ class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.A
     }
 
     fun swapList(newImages: List<Image>) {
-        images.addAll(newImages)
+        images = newImages
         notifyDataSetChanged()
     }
 
-    inner class ImageViewHolder(val item: ImagesListItemBinding) : RecyclerView.ViewHolder(item.root) , View.OnClickListener {
+    inner class ImageViewHolder(val item: ImagesListItemBinding) :
+        RecyclerView.ViewHolder(item.root), View.OnClickListener {
         init {
             item.root.setOnClickListener(this)
         }
+
         fun bind(image: Image) {
             item.image = image
         }
@@ -51,6 +53,6 @@ class ImageAdapter(var imageClickListener : ImageClickListener) : RecyclerView.A
     }
 
     interface ImageClickListener {
-        fun onImageClickListener(image : Image)
+        fun onImageClickListener(image: Image)
     }
 }
