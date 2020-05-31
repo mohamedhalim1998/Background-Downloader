@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Entity
 import com.mohamed.halim.essa.backgrounddownloader.R
 import com.mohamed.halim.essa.backgrounddownloader.data.Image
 import com.mohamed.halim.essa.backgrounddownloader.databinding.ImagesListItemBinding

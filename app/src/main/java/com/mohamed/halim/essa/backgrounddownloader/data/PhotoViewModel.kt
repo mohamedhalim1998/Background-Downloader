@@ -61,5 +61,8 @@ class PhotoViewModel(val app: Application) : AndroidViewModel(app) {
         ostream.close()
 
     }
+    fun reset(){
+        _images.value = mutableListOf()
+    }
 
 }

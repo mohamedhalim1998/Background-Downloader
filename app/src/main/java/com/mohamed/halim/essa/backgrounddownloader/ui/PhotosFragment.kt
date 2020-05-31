@@ -52,6 +52,12 @@ class PhotosFragment : Fragment(), ImageAdapter.ImageClickListener {
             }
 
         })
+        val refresher = binding.swipeToRefresh
+        refresher.setOnRefreshListener {
+            viewModel.reset()
+            viewModel.getPhotos(1)
+            refresher.isRefreshing = false
+        }
         return binding.root
     }
 

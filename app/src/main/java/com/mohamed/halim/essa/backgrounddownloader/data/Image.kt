@@ -1,16 +1,12 @@
 package com.mohamed.halim.essa.backgrounddownloader.data
 
 import android.os.Parcelable
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@Entity(tableName = "Images")
 data class Image @JvmOverloads constructor(
-    @PrimaryKey val id: String,
+    val id: String,
     @Json(name = "created_at") val createdAt: String? = null,
     @Json(name = "updated_at") val updatedAt: String? = null,
     @Json(name = "promoted_at") val promotedAt: String? = null,
@@ -19,8 +15,8 @@ data class Image @JvmOverloads constructor(
     val description: String? = null,
     @Json(name = "alt_description") val altDescription: String? = null,
 
-    @Embedded val urls: Urls? = null,
-    @Embedded val links: Links? = null,
+    val urls: Urls? = null,
+    val links: Links? = null,
     val likes: Int? = null
 
 
