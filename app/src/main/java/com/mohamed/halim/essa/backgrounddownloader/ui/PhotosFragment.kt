@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -16,18 +17,20 @@ import com.mohamed.halim.essa.backgrounddownloader.R
 import com.mohamed.halim.essa.backgrounddownloader.adapters.ImageAdapter
 import com.mohamed.halim.essa.backgrounddownloader.data.Image
 import com.mohamed.halim.essa.backgrounddownloader.data.PhotoViewModel
+import com.mohamed.halim.essa.backgrounddownloader.data.PhotoViewModelFactory
 import com.mohamed.halim.essa.backgrounddownloader.databinding.FragmentPhotosBinding
 
 
 class PhotosFragment : Fragment(), ImageAdapter.ImageClickListener {
     lateinit var viewModel: PhotoViewModel
     lateinit var navController: NavController
-
+    lateinit var viewModelFactory: PhotoViewModelFactory
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProviders.of(this).get(PhotoViewModel::class.java)
+        viewModelFactory = PhotoViewModelFactory(requireActivity().application)
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(PhotoViewModel::class.java)
         val binding = FragmentPhotosBinding.inflate(layoutInflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
@@ -35,7 +38,7 @@ class PhotosFragment : Fragment(), ImageAdapter.ImageClickListener {
         val adapter = ImageAdapter(this)
         recyclerView.adapter = adapter
         val layoutManager = GridLayoutManager(requireContext(), 3)
-        if(requireContext().resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+        if (requireContext().resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             layoutManager.spanCount = 5
         }
         recyclerView.layoutManager = layoutManager
