@@ -18,26 +18,31 @@
         tools:context=".ui.ImageViewFragment">
 
         <ProgressBar
+            android:id="@+id/progress_bar_load"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
 
-        <com.jsibbold.zoomage.ZoomageView
+        <!--        <com.jsibbold.zoomage.ZoomageView-->
+        <!--            android:id="@+id/full_image_view"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:scaleType="fitCenter"-->
+        <!--            app:zoomage_animateOnReset="true"-->
+        <!--            app:zoomage_autoCenter="true"-->
+        <!--            app:zoomage_autoResetMode="UNDER"-->
+        <!--            app:zoomage_maxScale="8"-->
+        <!--            app:zoomage_minScale="0.6"-->
+        <!--            app:zoomage_restrictBounds="false"-->
+        <!--            android:focusable="false"-->
+        <!--            app:zoomage_translatable="true"-->
+        <!--            app:zoomage_zoomable="true"-->
+        <!--            bind:image="@{image.urls.regular}" />-->
+        <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
             android:id="@+id/full_image_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:scaleType="fitCenter"
-            app:zoomage_animateOnReset="true"
-            app:zoomage_autoCenter="true"
-            app:zoomage_autoResetMode="UNDER"
-            app:zoomage_maxScale="8"
-            app:zoomage_minScale="0.6"
-            app:zoomage_restrictBounds="false"
-            android:focusable="false"
-            app:zoomage_translatable="true"
-            app:zoomage_zoomable="true"
-            bind:image="@{image.urls.regular}" />
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 </layout>
